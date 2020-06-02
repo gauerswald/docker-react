@@ -5,7 +5,7 @@ services:
 before_install:
   - docker build -t gauerswald/docker-react -f Dockerfile.dev .
 script:
-  - docker run -e CI=true gauerswald/docker-react npm run test
+  - docker run -e CI=true gauerswald/docker-react npm run test -- --coverage
 deploy:
   provider: elasticbeanstalk
   region: "eu-central-1"
